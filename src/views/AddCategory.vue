@@ -21,12 +21,12 @@
                         <div class="mx-auto max-w-xs">
                             <Form @submit="get_data" :validation-schema="scheam">
                                 <Field name="name"
-                                    class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                                    class="w-full px-8 py-4 rounded-lg font-medium  border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                                     type="text" placeholder="name " />
                                 <ErrorMessage name="name"></ErrorMessage>
                                 <div id="file" class="mt-5">
                                     <Field name="image"
-                                        class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white "
+                                        class="w-full px-8 py-3 rounded-lg font-medium  border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white "
                                         type="file" id="file" placeholder="image" />
                                     <span>Select File</span>
                                 </div>
@@ -88,11 +88,24 @@ export default {
 <style lang="scss">
 #cat {
     >div {
-        box-shadow: 0 0 15px 10px #23324051;
+        box-shadow: 0 0 15px 10px #dddedf51;
+        background-color: #172b3a;
+
         @media (max-width:576px) {
             box-shadow: none
         }
     }
+    input {
+        background-color: #09141c;
+        color: #fff;
+
+        border: 1px solid #9fa6ab;
+
+    }
+    input::placeholder {
+        color: rgb(230, 225, 225);
+    }
+
 
     #file {
         position: relative;
@@ -107,17 +120,19 @@ export default {
 
         span {
             position: absolute;
-            border: 1px solid #e4dede;
+            border: 1px solid #9fa6ab;
             width: 100%;
             height: 100%;
             left: 0;
             padding-top: 15px;
-            background-color: #f3f4f6;
+            background-color: #09141c;
+            color: #fff;
             border-radius: 10px;
         }
     }
 
     button {
-        background-color: #233240;
+        background-color: #09141c;
     }
-}</style>
+}
+</style>

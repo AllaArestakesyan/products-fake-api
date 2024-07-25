@@ -65,19 +65,19 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background-color: #23324028;
+  background-color: #0f202d;
   min-height: 100vh;
-  box-shadow: inset 0 0 15px 10px #23324051;
-
+  box-shadow: inset 0 0 15px 10px #d8d8d851;
+  color: #fff;
   @media (max-width:576px) {
-    background-color: #fff;
     box-shadow: none
   }
 
   >nav {
     padding: 30px;
-    background-color: #233240;
-    border-radius: 0 0 20px 20px;
+    background-color: #19252f;
+    border-radius: 0 0 15px 15px;
+    border-bottom: 1px solid #9fa6ab;
 
     @media (max-width:576px) {
       display: flex;
@@ -95,11 +95,11 @@ export default {
 
       a {
         font-weight: bold;
-        color: #fff;
+        color: #9fa6ab;
       }
 
       a.router-link-exact-active {
-        color: #41ffaa;
+        color: #fff;
       }
     }
 
@@ -121,24 +121,26 @@ export default {
         background-color: #fff;
       }
     }
+
     >nav {
       position: absolute;
       right: 0;
       top: 65px;
       width: 70%;
-      background-color: #233240;
+      background-color: #19252f;
       display: grid;
       gap: 20px;
       padding-bottom: 10px;
       border-radius: 0 0 20px 20px;
+
       a {
         font-weight: bold;
-        color: #fff;
+        color: #9fa6ab;
       }
+
       a.router-link-exact-active {
-        color: #41ffaa;
+        color: #fff;
       }
     }
   }
-}
-</style>
+}</style>
