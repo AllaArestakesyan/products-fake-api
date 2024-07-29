@@ -2,11 +2,10 @@
     <div class="home min-h-screen  text-gray-900 flex justify-center">
         <div class="max-w-screen-xl m-0 sm:m-10 shadow sm:rounded-lg flex-1">
             <select @change="selected">
-                <option value="" > categories ... </option>
-                <option v-for="(item, index) in select" :key="index"  :value="item.id">{{item.name}}</option>
+                <option value=""> categories ... </option>
+                <option v-for="(item, index) in select" :key="index" :value="item.id">{{ item.name }}</option>
             </select>
             <div>
-
                 <div v-for="(item, index) in data" :key='index'
                     class="rounded-lg bg-white shadow-lg dark:bg-neutral-700 text-center">
                     <a href="#!">
@@ -19,7 +18,9 @@
                         <p class="mb-2 text-base text-neutral-500 dark:text-neutral-300">
                             {{ item.description.length > 30 ? item.description.slice(0, 30) + "..." : item.description }}
                         </p>
-                        <a href="">see more ...</a>
+                        <router-link :to="'/product/' + item.id">
+                            see more ...
+                        </router-link>
                         <button @click="deleteProductById(item.id)"
                             class="mt-3 inline-block rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out  hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]  focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0  active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]">
                             &times;
@@ -52,9 +53,9 @@ export default {
                 console.error('There was an error!', error);
             }
         },
-        async selected(event){
+        async selected(event) {
             const x = event.target.value;
-            const response1 = await axios.get(`https://api.escuelajs.co/api/v1/products${x?"/?categoryId="+x:""}`);
+            const response1 = await axios.get(`https://api.escuelajs.co/api/v1/products${x ? "/?categoryId=" + x : ""}`);
             this.data = response1.data;
         }
     },
@@ -81,8 +82,8 @@ export default {
         outline: none;
         padding: 20px 0;
         text-align: center;
-        border:1px solid #9fa6ab;
-        border-radius:5px
+        border: 1px solid #9fa6ab;
+        border-radius: 5px
     }
 
     >div>div {
@@ -112,5 +113,4 @@ export default {
             }
         }
     }
-}
-</style>
+}</style>

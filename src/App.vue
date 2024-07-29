@@ -69,6 +69,7 @@ export default {
   min-height: 100vh;
   box-shadow: inset 0 0 15px 10px #d8d8d851;
   color: #fff;
+
   @media (max-width:576px) {
     box-shadow: none
   }
@@ -143,4 +144,5 @@ export default {
       }
     }
   }
-}</style>
+}
+</style>
