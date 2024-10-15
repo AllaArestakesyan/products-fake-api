@@ -1,7 +1,7 @@
 <template>
     <!-- source:https://codepen.io/owaiswiz/pen/jOPvEPB -->
     <div id="cat" class="min-h-screen  text-gray-900 flex justify-center">
-        <div class="max-w-screen-xl m-0 sm:m-10  shadow sm:rounded-lg flex justify-center flex-1">
+        <div class="max-w-screen-xxl m-0 sm:m-10  shadow sm:rounded-lg flex justify-center flex-1">
             <div class="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
                 <div class="mt-12 flex flex-col items-center text-white">
 
@@ -18,16 +18,16 @@
 
 
 
-                        <div class="relative w-full max-w-4xl mx-auto">
+                        <div class="relative w-full max-w-6xl mx-auto">
                             <!-- Slides -->
-                            <div class="overflow-hidden relative h-64 rounded-lg shadow-lg">
+                            <div class="overflow-hidden relative h-80 rounded-lg shadow-lg">
                                 <div v-for="(item, index) in data?.images" :key="index"
                                     class="carousel-inner flex transition-transform duration-500 ease-in-out"
                                     :style="{ transform: `translateX(-${Math.abs((index - currentIndex)) * 100}%)` }">
                                     <div class="carousel-item flex-shrink-0 w-full h-full flex items-center justify-center">
                                         {{ item }} - {{ data?.images[currentIndex] }} {{ index }} {{ currentIndex }}
                                         <img :src="item"
-                                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                            class="absolute block w-full  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                             alt="...">
                                     </div>
                                 </div>

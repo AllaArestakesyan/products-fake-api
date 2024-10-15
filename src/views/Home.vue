@@ -7,7 +7,7 @@
             </select>
             <div>
                 <div v-for="(item, index) in data" :key='index'
-                    class="rounded-lg bg-white shadow-lg dark:bg-neutral-700 text-center">
+                    class="divs rounded-lg bg-white shadow-lg dark:bg-neutral-700 text-center">
                     <a href="#!">
                         <img class="rounded-t-lg" :src='item.images[0]' alt="" />
                     </a>
@@ -21,10 +21,7 @@
                         <router-link :to="'/product/' + item.id">
                             see more ...
                         </router-link>
-                        <button @click="deleteProductById(item.id)"
-                            class="mt-3 inline-block rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out  hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]  focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0  active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]">
-                            &times;
-                        </button>
+                        <i class="fa-solid fa-trash bybtn" @click="deleteProductById(item.id)"></i>
                     </div>
                 </div>
             </div>
@@ -34,6 +31,7 @@
 
 <script>
 import axios from 'axios';
+import "./style.scss"
 
 export default {
     name: 'HomePage',
@@ -113,4 +111,5 @@ export default {
             }
         }
     }
-}</style>
+}
+</style>
